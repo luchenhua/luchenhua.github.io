@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on 0 -&gt; 1</title>
+    <link>https://luchenhua.github.io/tags/go/</link>
+    <description>Recent content in Go on 0 -&gt; 1</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Jul 2017 21:45:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://luchenhua.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo to Hugo</title>
+      <link>https://luchenhua.github.io/post/2017/07/25/hexo-to-hugo/</link>
+      <pubDate>Tue, 25 Jul 2017 21:45:39 +0800</pubDate>
+      
+      <guid>https://luchenhua.github.io/post/2017/07/25/hexo-to-hugo/</guid>
+      <description>I&amp;rsquo;ve moved from Hexo to Hugo because of the following three reasons:
+ I&amp;rsquo;m the kind of person who likes to try out new things; Hugo is Go based; I&amp;rsquo;m a fan of the author, spf13, because of the vim config script - spf13-vim.  The basic setup procedures are almost the same.
+Hexo:
+brew install node npm install -g hexo-cli hexo init blog cd blog npm install hexo new post xxxx.</description>
+    </item>
+    
+  </channel>
+</rss>
