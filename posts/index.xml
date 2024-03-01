@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 0 -&gt; 1</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://luchenhua.github.io/posts/</link>
     <description>Recent content in Posts on 0 -&gt; 1</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luchenhua.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简化本地开发环境模拟 Redis 集群的起停脚本</title>
-      <link>http://localhost:1313/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</link>
+      <link>https://luchenhua.github.io/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</guid>
+      <guid>https://luchenhua.github.io/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</guid>
       <description>起因 Link to heading 开发和维护系统的过程中有时候需要重新启动全套的前后端服务来进行调试，而且有时候不方便联网或者公司的 VPN 不是很稳定所以无法连接。因此在本地开发机器上模拟 3 主 3 从模式的 Redis 集群成了一个选择。&#xA;但是这带来一个问题，每次调试代码的时候需要一个一个去启动所有 6 个 Redis Server 再同步真心麻烦，官方虽然提供了给 6 台机器快速同步的 Ruby 脚本，但是每台的起停依旧是需要手工的。&#xA;思路 Link to heading 既然是通过在本地开发环境上的不同目录以不同的端口号来启动 Redis Server 的方式来实现单机启动一个 3 主 3 从的 Redis 集群，那就代表 Shell 脚本可以将所有的起停的命令都集中管理并且方便进一步自动化。&#xA;由于 Redis 官方已经提供了搭建集群的 Ruby 脚本，所以要做的只是制作起停脚本，并在里面带上文件清理即可。&#xA;过程 Link to heading 首先制作 3 主 3 从的环境所必要的 6 个 redis.conf 并按照不同端口号放在不同的目录里面。如下：&#xA;~/redis bat ./*/redis.conf ───────┬──────────────────────────────────── │ File: ./6379/redis.conf ───────┼──────────────────────────────────── 1 │ port 6379 2 │ pidfile redis.</description>
     </item>
     <item>
       <title>职场减压牢记 6 个定律</title>
-      <link>http://localhost:1313/posts/2018/12/six-keys-to-relief-from-workplace-stress/</link>
+      <link>https://luchenhua.github.io/posts/2018/12/six-keys-to-relief-from-workplace-stress/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/12/six-keys-to-relief-from-workplace-stress/</guid>
+      <guid>https://luchenhua.github.io/posts/2018/12/six-keys-to-relief-from-workplace-stress/</guid>
       <description>今天看到一篇文章，觉得正好适合现在的自己来对照，所以转载一下作为备份。&#xA;保持充沛的活力 Link to heading 作为一名职场白领，很多时候都感觉到非常的疲劳，其实这并不是因为工作量过大，大部分是因为焦虑和紧张产生的不良情绪，所以，最好培养自己对工作的兴趣和爱好，这样才能保持比较充沛的活力。&#xA;坚持自己的价值观 Link to heading 必须要清楚自己到底想要什么，是金钱或是财富，还是不断的超越和自我实现的能力。然后，最好想想自己目前的工作是否能提供给自己精神和物质上的需求，如果工作无法达到自己的愿望，那最好远离这份工作。&#xA;适应不可避免的现实 Link to heading 生活中每天都可能遇到不愉快的事情，当受到不公平的待遇后，或是调配到不合理的工作岗位时，如果这是一个无法挽回的事实，那就需要及时调整自己的心态，去勇敢和清醒的面对这个现实，以调整自己适合于在不同的环境中工作的能力。&#xA;保持平和的心态 Link to heading 不要让压力打败自己，要保持良好的心态。所以每天尽量多做一些体育锻炼，最好有半个小时。在运动时必须要积极开心，在这短暂的时间内，无疑是在为自己充电。&#xA;克服畏惧的情绪 Link to heading 工作中也有一些畏惧的情绪发生，所以为了克服自己的这个情绪，可以从一些毫无起眼的小事开始做起，比如主动跟一些陌生的同事打交道，或自己去看一些恐怖片，经常尝试做一些平时自己不敢做的事，这样就可以有效克服畏惧的情绪。&#xA;养成良好的生活习惯 Link to heading 有规律和有秩序的生活，可以令人保持头脑清醒，从而心情舒畅。每天整理好自己的办公桌，清理电脑中文件，另外在家中，也要将家里收拾干净，并且培养一些良好的生活习惯，如吃饭要按时按量进行。作息时间要有规律，每天保持睡觉7到8个小时，并且适当做一些锻炼。有序的生活习惯能更有利于在工作上充满活力。&#xA;原帖地址</description>
     </item>
     <item>
       <title>优化博客访问速度</title>
-      <link>http://localhost:1313/posts/2018/12/blog-speedup-for-cn/</link>
+      <link>https://luchenhua.github.io/posts/2018/12/blog-speedup-for-cn/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/12/blog-speedup-for-cn/</guid>
+      <guid>https://luchenhua.github.io/posts/2018/12/blog-speedup-for-cn/</guid>
       <description>起因 Link to heading 平时电脑因为一直保持科学上网的状态所以没有感觉到，但是无意中有一次好奇的用手机访问了这个博客，发觉速度奇慢无比，东西根本加载不出来，所以决定进行调查修复。&#xA;思路 Link to heading 根据现象，页面不存在访问 404 等情况，但是每一页的加载都奇慢无比，而且时不时出现因 CSS 或者 JS 加载出错导致的页面样式混乱，结合博客网站自身是一个静态页面，不存在后端服务的 JS 交互，所以猜测是否因为在这套 Theme 中引用了墙外的资源并且那个资源服务器访问非常缓慢不稳定导致。&#xA;调查 Link to heading 如下图证实了我的猜想，因此只需要将引用的资源替换为国内访问迅速的 CDN 的版本即可。&#xA;开启科学上网 (6.68s)：&#xA;未开启科学上网 (2.3min)：&#xA;过程 Link to heading Hugo 静态博客的 JS 以及 CSS 的配置主要是读取 theme 目录下被使用的那个 theme 的 layouts 中的设定。以正在使用的 Minimal 为例：&#xA;~/Develop/private/blog/cn(develop ✗) tree themes/minimal/layouts themes/minimal/layouts ├── 404.html ├── _default │ ├── list.html │ ├── single.html │ └── terms.html ├── index.html └── partials ├── body-open.</description>
     </item>
     <item>
       <title>利用 RSA Key 实现 SSH 免登录</title>
-      <link>http://localhost:1313/posts/2018/10/ssh-with-rsa-key/</link>
+      <link>https://luchenhua.github.io/posts/2018/10/ssh-with-rsa-key/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/10/ssh-with-rsa-key/</guid>
+      <guid>https://luchenhua.github.io/posts/2018/10/ssh-with-rsa-key/</guid>
       <description>起因 Link to heading 最近一阵子经常要在各种机器之间来回切换跳转进行日志的排查和数据修复，每次都要先找到服务器的 IP 地址然后带上用户名 SSH 并且输入密码实在是太繁琐了，所以就想偷懒了。&#xA;思路 Link to heading 用户名是不可避免的，但是 IP 地址可以用规范的服务器别名来代替，服务器别名的规则按照【公用/私用-云服务器商-用途】来。&#xA;密码的输入改用 RSA 的公钥密钥配对来实现免登录。&#xA;过程 Link to heading 生成 RSA 公钥&#xA;ssh-keygen -t rsa 将生成的公钥复制到目标服务器&#xA;scp .ssh/id_rsa.pub root@111.111.111.111:/home/root/id_rsa.pub 在目标服务器上追加公钥的授权认证&#xA;ssh root@111.111.111.11 cat id_rsa.pub &amp;gt;&amp;gt; .ssh/authorized_keys chmod 600 .ssh/authorized_keys 在本地配置 alias 登录&#xA;vim ~/.ssh/config 并添加如下内容：&#xA;Host private-tencent-blog # 自定义别名 HostName 111.111.111.11 # 替换为你的 SSH 服务器 IP 或 Domain Port 22 # ssh服务器端口，默认为22 User root # ssh服务器用户名 IdentityFile ~/.</description>
     </item>
   </channel>

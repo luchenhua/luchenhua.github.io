@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 0 -&gt; 1</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://luchenhua.github.io/categories/</link>
     <description>Recent content in Categories on 0 -&gt; 1</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luchenhua.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tech</title>
-      <link>http://localhost:1313/categories/tech/</link>
+      <link>https://luchenhua.github.io/categories/tech/</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/tech/</guid>
+      <guid>https://luchenhua.github.io/categories/tech/</guid>
       <description></description>
     </item>
     <item>
       <title>Life</title>
-      <link>http://localhost:1313/categories/life/</link>
+      <link>https://luchenhua.github.io/categories/life/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/life/</guid>
+      <guid>https://luchenhua.github.io/categories/life/</guid>
       <description></description>
     </item>
     <item>
       <title>Work</title>
-      <link>http://localhost:1313/categories/work/</link>
+      <link>https://luchenhua.github.io/categories/work/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/work/</guid>
+      <guid>https://luchenhua.github.io/categories/work/</guid>
       <description></description>
     </item>
   </channel>

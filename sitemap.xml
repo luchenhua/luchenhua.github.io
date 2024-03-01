@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://luchenhua.github.io/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://luchenhua.github.io/categories/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://luchenhua.github.io/tags/linux/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://luchenhua.github.io/posts/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/redis/</loc>
+    <loc>https://luchenhua.github.io/tags/redis/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/shell/</loc>
+    <loc>https://luchenhua.github.io/tags/shell/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://luchenhua.github.io/tags/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/tech/</loc>
+    <loc>https://luchenhua.github.io/categories/tech/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</loc>
+    <loc>https://luchenhua.github.io/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</loc>
     <lastmod>2018-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/life/</loc>
+    <loc>https://luchenhua.github.io/categories/life/</loc>
     <lastmod>2018-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/motivation/</loc>
+    <loc>https://luchenhua.github.io/tags/motivation/</loc>
     <lastmod>2018-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/work/</loc>
+    <loc>https://luchenhua.github.io/categories/work/</loc>
     <lastmod>2018-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/workplace/</loc>
+    <loc>https://luchenhua.github.io/tags/workplace/</loc>
     <lastmod>2018-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2018/12/six-keys-to-relief-from-workplace-stress/</loc>
+    <loc>https://luchenhua.github.io/posts/2018/12/six-keys-to-relief-from-workplace-stress/</loc>
     <lastmod>2018-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/frontend/</loc>
+    <loc>https://luchenhua.github.io/tags/frontend/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/optimize/</loc>
+    <loc>https://luchenhua.github.io/tags/optimize/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2018/12/blog-speedup-for-cn/</loc>
+    <loc>https://luchenhua.github.io/posts/2018/12/blog-speedup-for-cn/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2018/10/ssh-with-rsa-key/</loc>
+    <loc>https://luchenhua.github.io/posts/2018/10/ssh-with-rsa-key/</loc>
     <lastmod>2018-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://luchenhua.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://luchenhua.github.io/series/</loc>
   </url>
 </urlset>

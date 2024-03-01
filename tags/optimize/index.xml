@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Optimize on 0 -&gt; 1</title>
-    <link>http://localhost:1313/tags/optimize/</link>
+    <link>https://luchenhua.github.io/tags/optimize/</link>
     <description>Recent content in Optimize on 0 -&gt; 1</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/optimize/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luchenhua.github.io/tags/optimize/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>优化博客访问速度</title>
-      <link>http://localhost:1313/posts/2018/12/blog-speedup-for-cn/</link>
+      <link>https://luchenhua.github.io/posts/2018/12/blog-speedup-for-cn/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/12/blog-speedup-for-cn/</guid>
+      <guid>https://luchenhua.github.io/posts/2018/12/blog-speedup-for-cn/</guid>
       <description>起因 Link to heading 平时电脑因为一直保持科学上网的状态所以没有感觉到，但是无意中有一次好奇的用手机访问了这个博客，发觉速度奇慢无比，东西根本加载不出来，所以决定进行调查修复。&#xA;思路 Link to heading 根据现象，页面不存在访问 404 等情况，但是每一页的加载都奇慢无比，而且时不时出现因 CSS 或者 JS 加载出错导致的页面样式混乱，结合博客网站自身是一个静态页面，不存在后端服务的 JS 交互，所以猜测是否因为在这套 Theme 中引用了墙外的资源并且那个资源服务器访问非常缓慢不稳定导致。&#xA;调查 Link to heading 如下图证实了我的猜想，因此只需要将引用的资源替换为国内访问迅速的 CDN 的版本即可。&#xA;开启科学上网 (6.68s)：&#xA;未开启科学上网 (2.3min)：&#xA;过程 Link to heading Hugo 静态博客的 JS 以及 CSS 的配置主要是读取 theme 目录下被使用的那个 theme 的 layouts 中的设定。以正在使用的 Minimal 为例：&#xA;~/Develop/private/blog/cn(develop ✗) tree themes/minimal/layouts themes/minimal/layouts ├── 404.html ├── _default │ ├── list.html │ ├── single.html │ └── terms.html ├── index.html └── partials ├── body-open.</description>
     </item>
   </channel>
