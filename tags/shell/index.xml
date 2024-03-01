@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on 0 -&gt; 1</title>
+    <link>http://localhost:1313/tags/shell/</link>
+    <description>Recent content in Shell on 0 -&gt; 1</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简化本地开发环境模拟 Redis 集群的起停脚本</title>
+      <link>http://localhost:1313/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</guid>
+      <description>起因 Link to heading 开发和维护系统的过程中有时候需要重新启动全套的前后端服务来进行调试，而且有时候不方便联网或者公司的 VPN 不是很稳定所以无法连接。因此在本地开发机器上模拟 3 主 3 从模式的 Redis 集群成了一个选择。&#xA;但是这带来一个问题，每次调试代码的时候需要一个一个去启动所有 6 个 Redis Server 再同步真心麻烦，官方虽然提供了给 6 台机器快速同步的 Ruby 脚本，但是每台的起停依旧是需要手工的。&#xA;思路 Link to heading 既然是通过在本地开发环境上的不同目录以不同的端口号来启动 Redis Server 的方式来实现单机启动一个 3 主 3 从的 Redis 集群，那就代表 Shell 脚本可以将所有的起停的命令都集中管理并且方便进一步自动化。&#xA;由于 Redis 官方已经提供了搭建集群的 Ruby 脚本，所以要做的只是制作起停脚本，并在里面带上文件清理即可。&#xA;过程 Link to heading 首先制作 3 主 3 从的环境所必要的 6 个 redis.conf 并按照不同端口号放在不同的目录里面。如下：&#xA;~/redis bat ./*/redis.conf ───────┬──────────────────────────────────── │ File: ./6379/redis.conf ───────┼──────────────────────────────────── 1 │ port 6379 2 │ pidfile redis.</description>
+    </item>
+    <item>
+      <title>利用 RSA Key 实现 SSH 免登录</title>
+      <link>http://localhost:1313/posts/2018/10/ssh-with-rsa-key/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2018/10/ssh-with-rsa-key/</guid>
+      <description>起因 Link to heading 最近一阵子经常要在各种机器之间来回切换跳转进行日志的排查和数据修复，每次都要先找到服务器的 IP 地址然后带上用户名 SSH 并且输入密码实在是太繁琐了，所以就想偷懒了。&#xA;思路 Link to heading 用户名是不可避免的，但是 IP 地址可以用规范的服务器别名来代替，服务器别名的规则按照【公用/私用-云服务器商-用途】来。&#xA;密码的输入改用 RSA 的公钥密钥配对来实现免登录。&#xA;过程 Link to heading 生成 RSA 公钥&#xA;ssh-keygen -t rsa 将生成的公钥复制到目标服务器&#xA;scp .ssh/id_rsa.pub root@111.111.111.111:/home/root/id_rsa.pub 在目标服务器上追加公钥的授权认证&#xA;ssh root@111.111.111.11 cat id_rsa.pub &amp;gt;&amp;gt; .ssh/authorized_keys chmod 600 .ssh/authorized_keys 在本地配置 alias 登录&#xA;vim ~/.ssh/config 并添加如下内容：&#xA;Host private-tencent-blog # 自定义别名 HostName 111.111.111.11 # 替换为你的 SSH 服务器 IP 或 Domain Port 22 # ssh服务器端口，默认为22 User root # ssh服务器用户名 IdentityFile ~/.</description>
+    </item>
+  </channel>
+</rss>

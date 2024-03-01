@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>0 -&gt; 1</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on 0 -&gt; 1</description>
+    <title>Posts on 0 -&gt; 1</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on 0 -&gt; 1</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 10 Dec 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>简化本地开发环境模拟 Redis 集群的起停脚本</title>
       <link>http://localhost:1313/posts/2018/12/simplify-local-redis-cluster-start-and-stop/</link>
@@ -35,13 +35,6 @@
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/2018/10/ssh-with-rsa-key/</guid>
       <description>起因 Link to heading 最近一阵子经常要在各种机器之间来回切换跳转进行日志的排查和数据修复，每次都要先找到服务器的 IP 地址然后带上用户名 SSH 并且输入密码实在是太繁琐了，所以就想偷懒了。&#xA;思路 Link to heading 用户名是不可避免的，但是 IP 地址可以用规范的服务器别名来代替，服务器别名的规则按照【公用/私用-云服务器商-用途】来。&#xA;密码的输入改用 RSA 的公钥密钥配对来实现免登录。&#xA;过程 Link to heading 生成 RSA 公钥&#xA;ssh-keygen -t rsa 将生成的公钥复制到目标服务器&#xA;scp .ssh/id_rsa.pub root@111.111.111.111:/home/root/id_rsa.pub 在目标服务器上追加公钥的授权认证&#xA;ssh root@111.111.111.11 cat id_rsa.pub &amp;gt;&amp;gt; .ssh/authorized_keys chmod 600 .ssh/authorized_keys 在本地配置 alias 登录&#xA;vim ~/.ssh/config 并添加如下内容：&#xA;Host private-tencent-blog # 自定义别名 HostName 111.111.111.11 # 替换为你的 SSH 服务器 IP 或 Domain Port 22 # ssh服务器端口，默认为22 User root # ssh服务器用户名 IdentityFile ~/.</description>
-    </item>
-    <item>
-      <title>My site &amp; I</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>Me Link to heading 习惯朋友们叫我的英文名 Alex，呆过上海交大，澳洲 Monash 毕业的魔都码农。&#xA;平时听听音乐，写写代码，读读杂书，玩玩魔兽，弄弄花草，打打篮球，练练武术，看看日综。&#xA;职业经历算是比较随心折腾：&#xA;早年在纯日企做外包启蒙了软件开发。&#xA;留学归来后去 IBM 干了两年后不甘平淡，所以裸辞经朋友介绍进了一家 To B 的创业公司当了研发部 01 号员工。&#xA;呆满三年兑现了对早已离职的 CTO 的承诺，但是在对业务的方向及理念上和公司出现了分歧。尝试沟通无果后不强求也不纠结，再次裸辞离开。&#xA;休息了一小段时间后入职了现在的世界 500 强零售巨头的 IT 部门。&#xA;目前在尝试着在工作中实践自己的一些技术上的想法，不断试错以期获得成长。&#xA;This site Link to heading 接触 Go 语言的时候了解到 Hugo 并且萌生了想要尝试个人博客的想法，主要想记录自己在工作和生活中的一些心得体会之类的，或许未来回顾一下能为自己当初幼稚的想法而自我吐槽一下。^_^&#xA;基于这个初心，博客不定时更新。内容带有很强的阶段性、试验性、随机性、非常不成熟，甚至会因为认知的变化而产生前后文章观点互相矛盾的情况。</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  利用 RSA Key 实现 SSH 免登录 · 0 -&gt; 1
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://cdn.jsdelivr.net/ https://fonts.gstatic.com; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/ https://fonts.googleapis.com/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self';">
+
+
+
+
+<meta name="author" content="Chenhua LU">
+<meta name="description" content="起因 Link to heading 最近一阵子经常要在各种机器之间来回切换跳转进行日志的排查和数据修复，每次都要先找到服务器的 IP 地址然后带上用户名 SSH 并且输入密码实在是太繁琐了，所以就想偷懒了。
+思路 Link to heading 用户名是不可避免的，但是 IP 地址可以用规范的服务器别名来代替，服务器别名的规则按照【公用/私用-云服务器商-用途】来。
+密码的输入改用 RSA 的公钥密钥配对来实现免登录。
+过程 Link to heading 生成 RSA 公钥
+ssh-keygen -t rsa 将生成的公钥复制到目标服务器
+scp .ssh/id_rsa.pub root@111.111.111.111:/home/root/id_rsa.pub 在目标服务器上追加公钥的授权认证
+ssh root@111.111.111.11 cat id_rsa.pub &gt;&gt; .ssh/authorized_keys chmod 600 .ssh/authorized_keys 在本地配置 alias 登录
+vim ~/.ssh/config 并添加如下内容：
+Host private-tencent-blog # 自定义别名 HostName 111.111.111.11 # 替换为你的 SSH 服务器 IP 或 Domain Port 22 # ssh服务器端口，默认为22 User root # ssh服务器用户名 IdentityFile ~/.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="利用 RSA Key 实现 SSH 免登录"/>
+<meta name="twitter:description" content="起因 Link to heading 最近一阵子经常要在各种机器之间来回切换跳转进行日志的排查和数据修复，每次都要先找到服务器的 IP 地址然后带上用户名 SSH 并且输入密码实在是太繁琐了，所以就想偷懒了。
+思路 Link to heading 用户名是不可避免的，但是 IP 地址可以用规范的服务器别名来代替，服务器别名的规则按照【公用/私用-云服务器商-用途】来。
+密码的输入改用 RSA 的公钥密钥配对来实现免登录。
+过程 Link to heading 生成 RSA 公钥
+ssh-keygen -t rsa 将生成的公钥复制到目标服务器
+scp .ssh/id_rsa.pub root@111.111.111.111:/home/root/id_rsa.pub 在目标服务器上追加公钥的授权认证
+ssh root@111.111.111.11 cat id_rsa.pub &gt;&gt; .ssh/authorized_keys chmod 600 .ssh/authorized_keys 在本地配置 alias 登录
+vim ~/.ssh/config 并添加如下内容：
+Host private-tencent-blog # 自定义别名 HostName 111.111.111.11 # 替换为你的 SSH 服务器 IP 或 Domain Port 22 # ssh服务器端口，默认为22 User root # ssh服务器用户名 IdentityFile ~/."/>
+
+<meta property="og:title" content="利用 RSA Key 实现 SSH 免登录" />
+<meta property="og:description" content="起因 Link to heading 最近一阵子经常要在各种机器之间来回切换跳转进行日志的排查和数据修复，每次都要先找到服务器的 IP 地址然后带上用户名 SSH 并且输入密码实在是太繁琐了，所以就想偷懒了。
+思路 Link to heading 用户名是不可避免的，但是 IP 地址可以用规范的服务器别名来代替，服务器别名的规则按照【公用/私用-云服务器商-用途】来。
+密码的输入改用 RSA 的公钥密钥配对来实现免登录。
+过程 Link to heading 生成 RSA 公钥
+ssh-keygen -t rsa 将生成的公钥复制到目标服务器
+scp .ssh/id_rsa.pub root@111.111.111.111:/home/root/id_rsa.pub 在目标服务器上追加公钥的授权认证
+ssh root@111.111.111.11 cat id_rsa.pub &gt;&gt; .ssh/authorized_keys chmod 600 .ssh/authorized_keys 在本地配置 alias 登录
+vim ~/.ssh/config 并添加如下内容：
+Host private-tencent-blog # 自定义别名 HostName 111.111.111.11 # 替换为你的 SSH 服务器 IP 或 Domain Port 22 # ssh服务器端口，默认为22 User root # ssh服务器用户名 IdentityFile ~/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/2018/10/ssh-with-rsa-key/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-10-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-10-01T00:00:00+00:00" />
+
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/2018/10/ssh-with-rsa-key/">
+
+
+<link rel="preload" href="http://localhost:1313/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="http://localhost:1313/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/images/apple-touch-icon.png">
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+<link rel="mask-icon" href="http://localhost:1313/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      0 -&gt; 1
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="http://localhost:1313/posts/">posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="http://localhost:1313/categories/">categories</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="http://localhost:1313/tags/">tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="http://localhost:1313/series/">series</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="http://localhost:1313/about/">about</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/2018/10/ssh-with-rsa-key/">
+              利用 RSA Key 实现 SSH 免登录
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2018-10-01T00:00:00Z">
+                October 1, 2018
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="http://localhost:1313/categories/tech/">Tech</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="http://localhost:1313/tags/linux/">Linux</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="http://localhost:1313/tags/shell/">Shell</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="起因">
+  起因
+  <a class="heading-link" href="#%e8%b5%b7%e5%9b%a0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>最近一阵子经常要在各种机器之间来回切换跳转进行日志的排查和数据修复，每次都要先找到服务器的 IP 地址然后带上用户名 SSH 并且输入密码实在是太繁琐了，所以就想偷懒了。</p>
+<h2 id="思路">
+  思路
+  <a class="heading-link" href="#%e6%80%9d%e8%b7%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>用户名是不可避免的，但是 IP 地址可以用规范的服务器别名来代替，服务器别名的规则按照【公用/私用-云服务器商-用途】来。</p>
+<p>密码的输入改用 RSA 的公钥密钥配对来实现免登录。</p>
+<h2 id="过程">
+  过程
+  <a class="heading-link" href="#%e8%bf%87%e7%a8%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>生成 RSA 公钥</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t rsa
+</span></span></code></pre></div><p>将生成的公钥复制到目标服务器</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>scp .ssh/id_rsa.pub root@111.111.111.111:/home/root/id_rsa.pub
+</span></span></code></pre></div><p>在目标服务器上追加公钥的授权认证</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh root@111.111.111.11
+</span></span><span style="display:flex;"><span>cat id_rsa.pub &gt;&gt; .ssh/authorized_keys
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ff0;font-weight:bold">600</span> .ssh/authorized_keys
+</span></span></code></pre></div><p>在本地配置 alias 登录</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim ~/.ssh/config
+</span></span></code></pre></div><p>并添加如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Host            private-tencent-blog     <span style="color:#007f7f"># 自定义别名</span>
+</span></span><span style="display:flex;"><span>HostName        111.111.111.11           <span style="color:#007f7f"># 替换为你的 SSH 服务器 IP 或 Domain</span>
+</span></span><span style="display:flex;"><span>Port            <span style="color:#ff0;font-weight:bold">22</span>                       <span style="color:#007f7f"># ssh服务器端口，默认为22</span>
+</span></span><span style="display:flex;"><span>User            root                     <span style="color:#007f7f"># ssh服务器用户名</span>
+</span></span><span style="display:flex;"><span>IdentityFile    ~/.ssh/id_rsa            <span style="color:#007f7f"># 第一个步骤生成的公钥文件对应的私钥文件</span>
+</span></span></code></pre></div><h2 id="结果">
+  结果
+  <a class="heading-link" href="#%e7%bb%93%e6%9e%9c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>暂时满足自己的需求了，各种 SSH 的时候只需要带上目标服务器的别名 alias 即可，比如说：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh private-tencent-blog
+</span></span></code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2018 -
+    
+    2024
+     Chenhua LU 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="http://localhost:1313/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
